@@ -31,14 +31,15 @@ namespace tryProject.Controllers
             IEnumerable<GroupManagerAssociations> g = from a in _context.Association
                                                       group a by new
                                                       {
-                                                          a.Manager.Name,
+                                                         a.City,
+                                                         a.Name,
 
                                                       } into k
                                                       select new GroupManagerAssociations
                                                       {
-                                                          GroupName = k.Key.Name,
+                                                          Cname=k.Key.City,
+                                                          Aname = k.Key.Name,
                                                       };
-            ViewData["associations"] = new SelectList(_context.Association, nameof(Association.Name));
             return View(g.ToList());
         }
 

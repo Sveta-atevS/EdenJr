@@ -3,19 +3,15 @@
 @{
     ViewData["Title"] = "GroupBy";
 }
-
+<h2>
+    Associations:
+</h2>
 
 @foreach (var group in Model)
 {
-<h3>
-    @group.GroupName
+<div>
+    @group.Aname located in @group.Cname
     
-</h3>
-
-
-    @*foreach (var a in group.items)
-    {
-        <p> @a.Name</p>
-    }*@
+</div>
 
 }*

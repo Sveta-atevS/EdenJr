@@ -7,8 +7,8 @@ namespace tryProject.Models
 {
     public class GroupManagerAssociations
     {
-        public string GroupName { get; set; }
+        public string Cname { get; set; }
+        public string Aname { get; set; }
 
-        //public IEnumerable<Association> items { get; set; }
     }
 }
