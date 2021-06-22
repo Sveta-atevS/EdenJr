@@ -79,7 +79,7 @@ namespace tryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,City,PurposeName,CommunityWorksDescription,Manager,Website, Email, Logo,Introduction")] Association association, int[] Zones, int[] Purposes, int[] CateringTo, string Manager)
+        public async Task<IActionResult> Create([Bind("Id,Name,City,PurposeName,CommunityWorksDescription,Manager,Website, Email, Logo,Introduction")] Association association, int[] Zones, int[] Purposes,int[] CommunityWorks, int[] CateringTo, string Manager)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +87,8 @@ namespace tryProject.Controllers
                 association.Zones.AddRange(_context.Zone.Where(x => Zones.Contains(x.Id)));
                 association.Purposes = new List<Purpose>();
                 association.Purposes.AddRange(_context.Purpose.Where(x => Purposes.Contains(x.Id)));
+                association.Purposes = new List<CommunityWorks>();
+                association.Purposes.AddRange(_context.CommunityWorks.Where(x => CommunityWorks.Contains(x.Id)));
                 association.CatersTo = new List<CatersTo>();
                 association.CatersTo.AddRange(_context.CatersTo.Where(x => CateringTo.Contains(x.Id)));
                 association.Manager = new Manager { Name = Manager, AssociationId = association.Id, Association = association };
