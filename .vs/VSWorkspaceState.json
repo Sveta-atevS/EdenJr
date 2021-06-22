@@ -7,6 +7,6 @@
     "\\tryProject\\Views\\Associations",
     "\\tryProject\\Views\\Purposes"
   ],
-  "SelectedNode": "\\tryProject\\Views\\Purposes\\Index.cshtml",
+  "SelectedNode": "\\tryProject\\Controllers\\AssociationsController.cs",
   "PreviewInSolutionExplorer": false
 }
