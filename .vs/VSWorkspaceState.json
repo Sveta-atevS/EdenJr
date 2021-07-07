@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\tryProject",
-    "\\tryProject\\Controllers",
-    "\\tryProject\\Views",
-    "\\tryProject\\Views\\Associations",
-    "\\tryProject\\Views\\Purposes"
+    ""
   ],
-  "SelectedNode": "\\tryProject\\Controllers\\AssociationsController.cs",
+  "SelectedNode": "\\tryProject.sln",
   "PreviewInSolutionExplorer": false
 }
