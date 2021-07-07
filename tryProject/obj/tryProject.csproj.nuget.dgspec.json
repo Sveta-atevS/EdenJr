@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gilis\\Source\\Repos\\EdenJr\\tryProject\\tryProject.csproj": {}
+    "C:\\Users\\yarde\\Source\\Repos\\Sveta-atevS\\EdenJr\\tryProject\\tryProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gilis\\Source\\Repos\\EdenJr\\tryProject\\tryProject.csproj": {
+    "C:\\Users\\yarde\\Source\\Repos\\Sveta-atevS\\EdenJr\\tryProject\\tryProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gilis\\Source\\Repos\\EdenJr\\tryProject\\tryProject.csproj",
+        "projectUniqueName": "C:\\Users\\yarde\\Source\\Repos\\Sveta-atevS\\EdenJr\\tryProject\\tryProject.csproj",
         "projectName": "tryProject",
-        "projectPath": "C:\\Users\\gilis\\Source\\Repos\\EdenJr\\tryProject\\tryProject.csproj",
-        "packagesPath": "C:\\Users\\gilis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gilis\\Source\\Repos\\EdenJr\\tryProject\\obj\\",
+        "projectPath": "C:\\Users\\yarde\\Source\\Repos\\Sveta-atevS\\EdenJr\\tryProject\\tryProject.csproj",
+        "packagesPath": "C:\\Users\\yarde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yarde\\Source\\Repos\\Sveta-atevS\\EdenJr\\tryProject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gilis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

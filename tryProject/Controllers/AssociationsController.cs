@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,6 @@ namespace tryProject.Controllers
             var checky = _context.Association.Include(x => x.Zones).Include(x => x.Purposes).Include(x => x.CommunityWorks).Include(x => x.CatersTo).ToListAsync();
             return View(await checky);
         }
-
         public async Task<IActionResult> Groupby()
         {
             IEnumerable<GroupManagerAssociations> g = from a in _context.Association
@@ -44,6 +44,7 @@ namespace tryProject.Controllers
         }
 
         // GET: Associations/Details/5
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -65,6 +66,7 @@ namespace tryProject.Controllers
         }
 
         // GET: Associations/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["Purposes"] = new SelectList(_context.Set<Purpose>(), nameof(Purpose.Id), nameof(Purpose.Name));
@@ -79,6 +81,7 @@ namespace tryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,City,PurposeName,CommunityWorksDescription,Manager,Website, Email, Logo,Introduction")] Association association, int[] Zones, int[] Purposes, int[] CateringTo, string Manager)
         {
             if (ModelState.IsValid)
@@ -98,6 +101,8 @@ namespace tryProject.Controllers
         }
 
         // GET: Associations/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -123,6 +128,7 @@ namespace tryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,City,Purpose,CommunityWorks,Manager,Website, Email, Logo,Introduction")] Association association, int[] Zones, int[] Purposes, int[] CateringTo, string Manager)
         {
             if (id != association.Id)
@@ -162,6 +168,7 @@ namespace tryProject.Controllers
         }
 
         // GET: Associations/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -182,6 +189,7 @@ namespace tryProject.Controllers
         // POST: Associations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var association = await _context.Association.FindAsync(id);

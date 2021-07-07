@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -69,6 +70,7 @@ namespace tryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,Decscription,Location,AssociationId,ZoneId,CatersToId,WorkOrGiveId")] CommunityWorks communityWorks)
         {
             if (ModelState.IsValid)
@@ -85,6 +87,8 @@ namespace tryProject.Controllers
         }
 
         // GET: CommunityWorks/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -109,6 +113,8 @@ namespace tryProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Decscription,Location,AssociationId,WorkOrGiveId,CatersToId,ZoneId")] CommunityWorks communityWorks)
         {
             if (id != communityWorks.Id)
@@ -146,6 +152,7 @@ namespace tryProject.Controllers
         }
 
         // GET: CommunityWorks/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -168,6 +175,7 @@ namespace tryProject.Controllers
         // POST: CommunityWorks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var communityWorks = await _context.CommunityWorks.FindAsync(id);
