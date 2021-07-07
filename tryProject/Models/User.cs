@@ -35,7 +35,7 @@ namespace tryProject.Models
         public UserType Type { get; set; } = UserType.Donates;
 
         
-        [RegularExpression ("^[A-Z]+[a-zA-Z ]",ErrorMessage = " You can use only letters")]
+       // [RegularExpression ("(^[a-zA-Z]+ [a-zA-z]) ",ErrorMessage = " You can use only letters")]
          public string Name { get; set; }
 
         public string Email { get; set; }

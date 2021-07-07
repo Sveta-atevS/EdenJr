@@ -37,7 +37,7 @@ namespace tryProject.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
      
-        public async Task<IActionResult> Register([Bind("UserName,Password,Volunteer,Name,Email")] User user)
+        public async Task<IActionResult> Register([Bind("UserName,Password,Name,Email")] User user)
         {
             if (ModelState.IsValid)
             {
